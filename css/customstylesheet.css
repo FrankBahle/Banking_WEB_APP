@@ -1,0 +1,84 @@
+﻿.bg-dull-blue {
+    background-color: #3a506b; 
+}
+
+.bg-dull-blue-light {
+    background-color: #B0C4DE;
+}
+
+
+
+
+.card-fullscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+}
+
+.card-fullscreen img.card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px) brightness(60%) grayscale(20%);
+    z-index: 1;
+}
+
+.card-fullscreen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 125, 155, 0.4); 
+    z-index: 2;
+}
+
+.card-fullscreen .card-img-overlay {
+    position: relative;
+    z-index: 3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+.vertical-line {
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    height: 100%;
+}
+
+.card-img-overlay .content-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .vertical-line {
+        display: none; 
+    }
+}
+
+.sizep {
+    font-size: 1.4rem;
+}
+
+.center-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

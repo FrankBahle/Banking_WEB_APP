@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Banking_WEB.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%-- Bootstrap CSS --%>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <%-- DataTables CSS --%>
+    <link href="DataTables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+
+    <%-- FontAwesome CSS --%>
+    <link href="Font_Awesome/css/all.css" rel="stylesheet" />
+
+    <%-- JQuery --%>
+    <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+
+    <%-- Popper --%>
+    <script src="Bootstrap/js/popper.min.js"></script>
+
+    <%-- Bootstrap JS --%>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <!-- Responsive extension CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" />
+
+    <!-- Responsive extension JS -->
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dull-blue-light fixed-top" id="mainNav">
+                <div class="container-fluid">
+
+                    <!-- Logo and Brand -->
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="img/Logo_TrustedWealth_Incoparations.png" alt="TrustedWealth Logo"
+                            class="rounded-circle me-2"
+                            style="width: 50px; height: 50px; object-fit: cover;" />
+                        <span class="fw-bold"><b>TrustedWealth Incorporations</b></span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+                        <div class="d-flex">
+                            <ul class="navbar-nav flex-row">
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonHome" runat="server" CssClass="nav-link text-white" PostBackUrl="~/HomePage.aspx" OnClick="LinkButtonHome_Click">Home</asp:LinkButton>
+                                </li>
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonAdmin" runat="server" CssClass="nav-link text-white" PostBackUrl="~/Admin-Login_Bank.aspx" OnClick="LinkButtonAdmin_Click">Admin</asp:LinkButton>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="d-flex">
+                            <ul class="navbar-nav flex-row">
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonUserAccount" runat="server" CssClass="nav-link text-white" PostBackUrl="~/User-Account.aspx" OnClick="LinkButtonUserAccount_Click">Main Page</asp:LinkButton>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav flex-row">
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonCreateAccount" runat="server" CssClass="nav-link text-white" PostBackUrl="~/Registration_Bank.aspx" OnClick="LinkButtonCreateAccount_Click">Create Account</asp:LinkButton>
+                                </li>
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonSignIn" runat="server" CssClass="nav-link text-white" PostBackUrl="~/Sign_In_Bank.aspx" OnClick="LinkButtonSignIn_Click">Sign In</asp:LinkButton>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav flex-row">
+                                <li class="nav-item me-3">
+                                    <asp:LinkButton ID="LinkButtonLogout" runat="server" CssClass="nav-link text-white" PostBackUrl="~/HomePage.aspx" OnClick="LinkButtonLogout_Click">Log Out</asp:LinkButton>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Page Content -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dull-blue text-light pt-5 pb-4">
+            <div class="container text-md-left" id="footer1">
+                <div class="row text-md-left">
+
+                    <!-- Company Info -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">TrustedWealth</h5>
+                        <p>Your trusted partner in financial growth, offering secure, innovative banking services tailored to your needs. Helping individuals and businesses thrive through smart financial solutions.</p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+                        <p>
+                            <asp:LinkButton ID="LinkButton4" runat="server" CssClass="text-light text-decoration-none">Home</asp:LinkButton>
+                        </p>
+                        <p>
+                            <asp:LinkButton ID="LinkButton5" runat="server" CssClass="text-light text-decoration-none">About Us</asp:LinkButton>
+                        </p>
+                        <p>
+                            <asp:LinkButton ID="LinkButton6" runat="server" CssClass="text-light text-decoration-none">Services</asp:LinkButton>
+                        </p>
+                        <p>
+                            <asp:LinkButton ID="LinkButton7" runat="server" CssClass="text-light text-decoration-none">Contact</asp:LinkButton>
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                        <p><i class="fas fa-home me-3"></i>789 Prosperity Blvd, Financial District, Metropolis</p>
+                        <p><i class="fas fa-envelope me-3"></i>info@trustedwealthbank.com</p>
+                        <p><i class="fas fa-phone me-3"></i>+1 (800) 555-9321</p>
+                        <p><i class="fas fa-print me-3"></i>+1 (800) 555-9322</p>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="col-md-3 col-lg-4 col-xl-2 mx-auto mt-3">
+                        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Follow Us</h5>
+                        <asp:LinkButton ID="LinkButton8" runat="server" CssClass="text-light me-4">
+                    <i class="fab fa-facebook-f"></i>
+                        </asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton9" runat="server" CssClass="text-light me-4">
+                    <i class="fab fa-twitter"></i>
+                        </asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton10" runat="server" CssClass="text-light me-4">
+                    <i class="fab fa-linkedin-in"></i>
+                        </asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton11" runat="server" CssClass="text-light me-4">
+                    <i class="fab fa-instagram"></i>
+                        </asp:LinkButton>
+                    </div>
+                </div>
+
+                <hr class="my-3">
+
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-8">
+                        <p class="text-light">© 2025 TrustedWealth Incorporations. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <p class="text-light text-end">Powered by TrustedTech Group</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>
